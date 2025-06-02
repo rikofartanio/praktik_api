@@ -1,4 +1,4 @@
 # Praktik API
--Latihan Express
--Latihan Sequelize
--Latihan CRUD Table Cars
+- Latihan Express
+- Latihan Sequelize
+- Latihan CRUD Table Cars
