@@ -1,5 +1,18 @@
 const sequelize= require("../config/database")
 const CarsTable= require("./cars.model")
+const OrdersTable = require("./orders.model")
+
+const models = {
+    CarsTable,
+    OrdersTable
+};
+
+//panggil associate untuk setiap model (jika ada)
+Object.values(models).forEach((Model)=>{
+    if (Model.associate){
+        Model.associate(models);
+    }
+});
 
 const initDB = async () => {
     try {
@@ -12,4 +25,4 @@ const initDB = async () => {
     }
 }
 
-module.exports= {initDB, CarsTable}
+module.exports= {initDB, CarsTable, OrdersTable}
