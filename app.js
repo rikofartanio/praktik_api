@@ -9,7 +9,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // panggil semua routing yang ada
 const routerCars= require('./routes/cars.route');
+const routeOrders = require('./routes/orders.route');
 app.use(routerCars);
+app.use(routeOrders);
 
 //panggil package yang dipakai/diperlukan
 // const opstionAllow ={
