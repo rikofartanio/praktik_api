@@ -1,0 +1,45 @@
+<htm lang="en">
+    <head>
+        <!--Mendefinisikan judul website, css, SEO-->
+        <%- include('../partials/head'); %>
+    </head>
+    <body>
+        <!--Body = ini tempat tampilan website di buat-->
+        <header>
+            <%- include('../partials/header'); %>
+        </header>
+        <main>
+            <div class="jumbotron">
+                <h1>Data Orderan</h1> 
+                <p>Orderan yang sewa ke kami </p>
+                <table>
+                    <thead>
+                        <!--tr = table row/baris -->
+                        <tr>
+                            <th>ID Order</th>
+                            <th>Nama Mobil</th>
+                            <th>Qty</th>
+                            <th>Order Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(function(value){ %>
+                       <tr>
+                        <!-- td = buat isi table-->
+                        <td><%= value.id %></td>
+                        <td><%= value.cars.name %> (<%= value.cars.brand %> <%= value.cars.year %>)</td>
+                        <td><%= value.qty %></td>
+                        <td><%= value.order_date %></td>
+                       </tr>
+                       <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <!-- Footer =Bagian bawah website, biasanya informasi copyright dll-->
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>
