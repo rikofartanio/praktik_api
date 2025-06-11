@@ -7,11 +7,16 @@ const app= express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+//panggil ejs dan set ke express
+app.set('view engine','ejs');
+
 // panggil semua routing yang ada
 const routerCars= require('./routes/cars.route');
 const routeOrders = require('./routes/orders.route');
+const routeViews = require('./routes/views.routes');
 app.use(routerCars);
 app.use(routeOrders);
+app.use(routeViews);
 
 //panggil package yang dipakai/diperlukan
 // const opstionAllow ={
