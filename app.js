@@ -14,9 +14,11 @@ app.set('view engine','ejs');
 const routerCars= require('./routes/cars.route');
 const routeOrders = require('./routes/orders.route');
 const routeViews = require('./routes/views.routes');
+const routeAuth = require('./routes/auth.route');
 app.use(routerCars);
 app.use(routeOrders);
 app.use(routeViews);
+app.use(routeAuth);
 
 //panggil package yang dipakai/diperlukan
 // const opstionAllow ={

@@ -9,7 +9,8 @@ const dbPort= process.env.DB_PORT;
 const sequelize= new Sequelize(dbName,dbUser,dbPass,{
     host: dbHost,
     port: dbPort,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    timezone:'+07:00'
 });
 
 module.exports= sequelize; 
